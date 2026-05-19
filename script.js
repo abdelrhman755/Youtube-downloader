@@ -1,6 +1,8 @@
 const input = document.getElementById ("video-input");
 const button = document.getElementById ("download-btn");
 const message = document.getElementById ("message");
+const thumbnail = document.getElementById ("thumbnail");
+const downloadLink = document.getElementById ("download-link");
 
 button.addEventListener ("click", () => {
     const videoURL = input.value;
@@ -20,13 +22,25 @@ button.addEventListener ("click", () => {
     setTimeout (() => {
         message.innerHTML = "Link is valid, and ready for download";
         message.style.color = "green";
+        let videoId = "";
+        if (videoURL.includes("v=")) {
+            videoId = videoURL.split ("v=") [1].split ("&") [0];
+        }
+        else if (videoURL.includes("youtu.be/")) {
+            videoId = videoURL.split ("youtu.be/")[1];
+        }
+        const thumbnailURL = "https://img.youtube.com/vi/${videoId}/maxresdefault.jpg";
+        thumbnail.src = thumbnailURL;
+        thumbnail.style.display = "block";
+        const ecternalDownloadLink = "https;//ssyoutube.com/watch?v=${videoId}";
+        downloadLink.href = externalDownloadLink;
+        downloadLink.style.display = "inline-block";
         input.value = "";
     }, 2000);
+});
 
-    input.addEventListener("keypress", (event) => {
+input.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
             button.click();
         }
     });
-
-});
