@@ -20,7 +20,7 @@ button.addEventListener ("click", () => {
     message.innerHTML = "Cheking Link......";
     message.style.color = "orange";
     setTimeout (() => {
-        message.innerHTML = "Link is valid, and ready for download";
+        message.innerHTML = "Link is valid, press download to open the download page";
         message.style.color = "green";
         let videoId = "";
         if (videoURL.includes("v=")) {
@@ -32,7 +32,7 @@ button.addEventListener ("click", () => {
         const thumbnailURL = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;       
         thumbnail.src = thumbnailURL;
         thumbnail.style.display = "block";
-        const externalDownloadLink = `https://ssyoutube.com/watch?v=${videoId}`;
+        const externalDownloadLink = `https://freightpass.ca/convert/?url=https://www.youtube.com/watch?v=${videoId}`;
         downloadLink.href = externalDownloadLink;
         downloadLink.style.display = "inline-block";
         input.value = "";
