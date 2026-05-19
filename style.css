@@ -20,7 +20,7 @@ body{
     letter-spacing:3px;
 }
 
-.card{
+.square{
     background:white;
     width:400px;
     padding:35px;
@@ -68,4 +68,10 @@ body{
 
 .download-btn:hover{
     background:#1d4ed8;
+}
+
+#message{
+    margin-top:15px;
+    font-size:15px;
+    font-weight:bold;
 }
