@@ -1,5 +1,5 @@
-const input = document.getElementById ("input");
-const button = document.getElementById ("download-button");
+const input = document.getElementById ("video-input");
+const button = document.getElementById ("download-btn");
 const message = document.getElementById ("message");
 
 button.addEventListener ("click", () => {
@@ -15,6 +15,18 @@ button.addEventListener ("click", () => {
         message.style.color = "red";
         return;
     }
-    message.innerHTML = "Link is valid and ready for download";
-    message.style.color = "green";
+    message.innerHTML = "Cheking Link......";
+    message.style.color = "orange";
+    setTimeout (() => {
+        message.innerHTML = "Link is valid, and ready for download";
+        message.style.color = "green";
+        input.value = "";
+    }, 2000);
+
+    input.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            button.click();
+        }
+    });
+
 });
