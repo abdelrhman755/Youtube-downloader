@@ -27,12 +27,12 @@ button.addEventListener ("click", () => {
             videoId = videoURL.split ("v=") [1].split ("&") [0];
         }
         else if (videoURL.includes("youtu.be/")) {
-            videoId = videoURL.split ("youtu.be/")[1];
-        }
-        const thumbnailURL = "https://img.youtube.com/vi/${videoId}/maxresdefault.jpg";
+    videoId = videoURL.split("youtu.be/")[1].split("?")[0];
+    }
+        const thumbnailURL = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;       
         thumbnail.src = thumbnailURL;
         thumbnail.style.display = "block";
-        const ecternalDownloadLink = "https;//ssyoutube.com/watch?v=${videoId}";
+        const externalDownloadLink = `https://ssyoutube.com/watch?v=${videoId}`;
         downloadLink.href = externalDownloadLink;
         downloadLink.style.display = "inline-block";
         input.value = "";
